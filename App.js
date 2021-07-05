@@ -1,22 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import AppNavigator from "./AppNavigator/AppNavigator";
 import { Container, Header } from "./Components/Components";
-import { Colors } from "./Constants/Colors";
+import { Colors } from "./Constants/Constants";
 
 export default function App(props) {
-  return (
-    <Container style={styles.container}>
-      <Header style={styles.header}>
-        <Text style={{ color: Colors.secondaryColor }}>I M Header</Text>
-        <Text>Walla habibi</Text>
-      </Header>
-    </Container>
-  );
+  return <AppNavigator />;
 }
 
-const styles = StyleSheet.create({
-  header: {
-    marginTop: 40,
-  },
-});
+const styles = StyleSheet.create({});

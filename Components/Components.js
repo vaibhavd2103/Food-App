@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { Colors } from "../Constants/Constants";
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
@@ -23,10 +24,10 @@ const styles = StyleSheet.create({
     width: width,
     height: height + 100,
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: Colors.primary,
   },
   header: {
-    backgroundColor: "red",
+    backgroundColor: Colors.accent,
     flexDirection: "row",
     width: width,
     height: 60,
