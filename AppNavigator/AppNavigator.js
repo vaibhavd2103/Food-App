@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -12,6 +12,7 @@ import Home from "../BottomTabScreens/Home";
 import Search from "../BottomTabScreens/Search";
 import Cart from "../BottomTabScreens/Cart";
 import { Colors } from "../Constants/Constants";
+import { SimpleLineIcons } from "react-native-vector-icons";
 
 const Stack = createStackNavigator();
 
@@ -57,7 +58,15 @@ function BottomTab() {
         },
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: () => {
+            return <TouchableOpacity></TouchableOpacity>;
+          },
+        }}
+      />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Cart" component={Cart} />
     </Tab.Navigator>
