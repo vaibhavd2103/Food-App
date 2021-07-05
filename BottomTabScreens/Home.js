@@ -10,6 +10,7 @@ const Home = (props) => {
       <Text style={{ color: Colors.accent }}>checking</Text>
       <Text style={{ color: Colors.accent }}>Sakshi</Text>
       <Text style={{ color: Colors.accent }}>Vaibhav</Text>
+      <Text style={{ color: Colors.accent }}>walla</Text>
     </Container>
   );
 };
