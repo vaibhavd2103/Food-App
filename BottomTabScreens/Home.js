@@ -8,6 +8,7 @@ const Home = (props) => {
     <Container>
       <Text style={{ color: Colors.accent }}>Home Screen</Text>
       <Text style={{ color: Colors.accent }}>checking</Text>
+      <Text style={{ color: Colors.accent }}>Vaibhav</Text>
     </Container>
   );
 };
