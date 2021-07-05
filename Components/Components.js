@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height + 100,
     alignItems: "center",
-    backgroundColor: Colors.primary,
+    backgroundColor: "white",
   },
   header: {
     backgroundColor: Colors.accent,
