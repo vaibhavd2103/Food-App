@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 export const Colors = {
   primary: "#283149",
@@ -17,9 +17,12 @@ export const Font = {
   mini: 9,
 };
 
+const height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
+
 export const Sizes = {
   padding: 10,
   margin: 15,
-  height: "100%",
-  width: "100%",
+  height: height,
+  width: width,
 };

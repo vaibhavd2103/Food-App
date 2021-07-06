@@ -21,7 +21,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   search: {
-    width: Sizes.width - Sizes.padding,
+    width: Sizes.width - Sizes.padding * 2,
     backgroundColor: "white",
     height: 45,
     borderRadius: 10,
