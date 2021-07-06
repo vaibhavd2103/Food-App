@@ -11,7 +11,7 @@ import { Container , Header} from "../Components/Components";
 import { Colors, Font, Sizes } from "../Constants/Constants";
 import { StatusBar } from "expo-status-bar";
 import HomeCarousel from '../Components/HomeComponents/HomeCarousel';
-
+import ResturantFlatlist from '../Components/HomeComponents/ResturantFlatlist';
 
 const Home = (props) => {
   return (
@@ -28,7 +28,7 @@ const Home = (props) => {
       </Header>
 
       <HomeCarousel navigation={props.navigation} />
-      
+      <ResturantFlatlist naviagtion ={props.navigation}/>
       
     </Container>
   );
