@@ -14,7 +14,7 @@ export const Font = StyleSheet.create({
   header: {
     fontSize: 18,
     fontWeight: "bold",
-    color: Colors.accent,
+    color: Colors.primary,
     // fontFamily: "Nunito-SemiBoldItalic",
   },
   title: {
@@ -27,7 +27,7 @@ export const Font = StyleSheet.create({
     fontSize: 12,
   },
   mini: {
-    fontSize: 9,
+    fontSize: 10,
     color: Colors.subtitle,
   },
 });
