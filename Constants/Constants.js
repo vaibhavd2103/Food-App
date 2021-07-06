@@ -12,9 +12,9 @@ export const Colors = {
 
 export const Font = StyleSheet.create({
   header: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
-    color: Colors.primary,
+    color: Colors.accent,
     // fontFamily: "Nunito-SemiBoldItalic",
   },
   title: {
