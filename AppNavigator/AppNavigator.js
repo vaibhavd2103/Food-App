@@ -54,7 +54,7 @@ const AppNavigator = () => {
 const Tab = createBottomTabNavigator();
 
 function BottomTab(props) {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("home");
 
   return (
     <Tab.Navigator
@@ -78,7 +78,7 @@ function BottomTab(props) {
           width: "90%",
           alignSelf: "center",
           position: "absolute",
-          bottom: 20,
+          bottom: 10,
           left: "5%",
         },
       }}
@@ -103,7 +103,7 @@ function BottomTab(props) {
                     selected === "home" ? Colors.secondary : "transparent",
                   justifyContent: "center",
                   alignItems: "center",
-                  bottom: selected === "home" ? 25 : 0,
+                  bottom: selected === "home" ? 15 : 0,
                   elevation: selected === "home" ? 10 : 0,
                 }}
               >
@@ -137,7 +137,7 @@ function BottomTab(props) {
                     selected === "search" ? Colors.secondary : "transparent",
                   justifyContent: "center",
                   alignItems: "center",
-                  bottom: selected === "search" ? 25 : 0,
+                  bottom: selected === "search" ? 15 : 0,
                   elevation: selected === "search" ? 10 : 0,
                 }}
               >
@@ -171,7 +171,7 @@ function BottomTab(props) {
                     selected === "cart" ? Colors.secondary : "transparent",
                   justifyContent: "center",
                   alignItems: "center",
-                  bottom: selected === "cart" ? 25 : 0,
+                  bottom: selected === "cart" ? 15 : 0,
                   elevation: selected === "cart" ? 10 : 0,
                 }}
               >
