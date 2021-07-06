@@ -8,11 +8,14 @@ import {
 } from "react-native";
 import { Container } from "../Components/Components";
 import { Colors, Font, Sizes } from "../Constants/Constants";
+import { StatusBar } from "expo-status-bar";
+import HomeCarousel from './../Components/HomeCarousel';
 
 const Home = (props) => {
   return (
-    <Container style={{ paddingTop: 10 }}>
-      <View style={styles.search}></View>
+    <Container style={{ paddingTop: 30 }}>
+      <StatusBar style="dark" />
+      <HomeCarousel navigation={props.navigation} />
     </Container>
   );
 };
@@ -20,13 +23,5 @@ const Home = (props) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  search: {
-    width: Sizes.width - Sizes.padding * 2,
-    backgroundColor: "white",
-    height: 45,
-    borderRadius: 10,
-    borderBottomWidth: 1,
-    elevation: 5,
-    alignSelf: "center",
-  },
+  
 });
