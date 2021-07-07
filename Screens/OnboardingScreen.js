@@ -24,43 +24,44 @@ const OnboardingScreen = (props) => {
             source={require("../assets/orderfood.png")}
             style={{ width: "100%", height: "100%" }}
           >
-            <View style={{ paddingTop: 70 }}>
+            <View style={{ paddingTop: 30 }}>
               <Text
                 style={{
                   color: Colors.primary,
-                  fontSize: 50,
+                  fontSize: 40,
                   textAlign: "center",
                   fontWeight: "bold",
                 }}
               >
-                WELCOME
-              </Text>
-
-              <Text
-                style={{
-                  color: Colors.primary,
-                  fontSize: 50,
-                  textAlign: "center",
-                  fontWeight: "bold",
-                }}
-              >
-                TO
+                ORDER ONLINE ON
               </Text>
 
               <Text
                 style={{
                   color: Colors.accent,
-                  fontSize: 50,
-                  fontWeight: "bold",
+                  fontSize: 40,
                   textAlign: "center",
+                  fontWeight: "bold",
                 }}
               >
-                HUNGREZY
+               HUNGREZY
+              </Text>
+
+              <Text
+                style={{
+                  color: Colors.secondary,
+                  fontSize: 30,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  paddingTop:10
+                }}
+              >
+                The flavours of your wish.
               </Text>
             </View>
 
-            <TouchableOpacity
-              style={styles.skip}
+              <TouchableOpacity
+              style={styles.done}
               onPress={() => props.navigation.navigate("Login")}
             >
               <View>
@@ -77,11 +78,11 @@ const OnboardingScreen = (props) => {
             source={require("../assets/ontheway.png")}
             style={{ width: "100%", height: "100%" }}
           >
-            <View style={{ paddingTop: 80 }}>
+            <View style={{ paddingTop: 50 }}>
               <Text
                 style={{
                   color: Colors.primary,
-                  fontSize: 50,
+                  fontSize: 40,
                   fontWeight: "bold",
                   textAlign: "center",
                 }}
@@ -91,19 +92,21 @@ const OnboardingScreen = (props) => {
 
               <Text
                 style={{
-                  color: Colors.accent,
-                  fontSize: 30,
+                  color: Colors.secondary,
+                  fontSize: 25,
                   fontWeight: "bold",
                   textAlign: "center",
                   paddingTop: 30,
+                  padding:10
                 }}
+                numberOfLines = {2}
               >
-                Take a bite out of hunger
+               Easy to order just take a bite out of hunger
               </Text>
             </View>
 
-            <TouchableOpacity
-              style={styles.skip}
+             <TouchableOpacity
+              style={styles.done}
               onPress={() => props.navigation.navigate("Login")}
             >
               <View>
@@ -120,10 +123,10 @@ const OnboardingScreen = (props) => {
             source={require("../assets/deliver.png")}
             style={{ width: "100%", height: "100%" }}
           >
-            <View style={{ paddingTop: 90 }}>
+            <View style={{ paddingTop: 50 }}>
               <Text
                 style={{
-                  color: Colors.accent,
+                  color: Colors.primary,
                   fontSize: 30,
                   fontWeight: "bold",
                   textAlign: "center",
@@ -138,7 +141,7 @@ const OnboardingScreen = (props) => {
                   fontSize: 60,
                   fontWeight: "bold",
                   textAlign: "center",
-                  paddingTop: 450,
+                  paddingTop: 20,
                 }}
               >
                 ENJOY!!
@@ -181,20 +184,22 @@ const styles = StyleSheet.create({
   skip: {
     height: 30,
     width: 70,
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     position: "absolute",
     bottom: 10,
     left: 10,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 18,
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: Colors.secondary,
+    elevation:5
+
   },
   done: {
     height: 30,
     width: 70,
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     position: "absolute",
     bottom: 10,
     right: 10,
