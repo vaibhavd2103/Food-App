@@ -10,7 +10,8 @@ import { Container } from "../Components/Components";
 import { Colors, Font, Sizes } from "../Constants/Constants";
 import { StatusBar } from "expo-status-bar";
 import SearchCarousel from './../Components/SearchCarousel';
-
+import SearchFoodList from './../Components/SearchFoodList';
+import SearchFoodList1 from './../Components/SearchFoodList1';
 
 
 const Home = (props) => {
@@ -18,6 +19,8 @@ const Home = (props) => {
     <Container style={{ paddingTop: 30 }}>
       <StatusBar style="dark" />
       <SearchCarousel navigation={props.navigation} />
+
+      
 
     </Container>
   );

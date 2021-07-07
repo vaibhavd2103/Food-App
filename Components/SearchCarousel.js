@@ -4,8 +4,9 @@ import { Container } from "../Components/Components";
 import { Colors, Sizes, Font } from "../Constants/Constants";
 import { FontAwesome, MaterialCommunityIcons } from 'react-native-vector-icons';
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
 import SearchFoodList from './../Components/SearchFoodList';
+import SearchFoodList1 from './../Components/SearchFoodList1';
 
 export default function SearchCarousel(props) {
     const windowWidth = Dimensions.get("window").width;
@@ -61,8 +62,8 @@ export default function SearchCarousel(props) {
         },
     ])
     return (
-        <Container>
-
+        <Container >
+            <ScrollView style={{width:'100%'}}>
             <Carousel
                 layout="default"
                 layoutCardOffset={0}
@@ -75,6 +76,7 @@ export default function SearchCarousel(props) {
                                 paddingTop: 10,
                                 alignItems: "center",
                                 justifyContent: "center",
+                                backgroundColor:"transparent"
                             }}
                         >
 
@@ -134,8 +136,12 @@ export default function SearchCarousel(props) {
                 </View>
 
             </View>
-
+                <View style={{marginBottom:200}}>
             <SearchFoodList navigation={props.navigation} />
+                    <SearchFoodList1 navigation={props.navigation} />
+                   
+            </View>
+            </ScrollView>
         </Container>
     );
 };
@@ -155,7 +161,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: Sizes.margin * 2,
         position: 'absolute',
-        bottom: 780
+        // bottom: 780
 
     },
     proffer: {
