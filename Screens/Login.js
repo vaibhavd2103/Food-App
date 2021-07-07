@@ -59,7 +59,7 @@ const Login = (props) => {
       <TouchableOpacity
         style={styles.signIn}
         onPress={() => {
-          props.navigation.navigate("BottomTab");
+          props.navigation.replace("BottomTab");
         }}
       >
         <Text style={{ ...Font.header, color: Colors.primary }}>Sign In</Text>
