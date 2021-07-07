@@ -1,16 +1,30 @@
 import React from "react";
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import { Container } from "../Components/Components";
-import { Colors } from "../Constants/Constants";
+import { Colors, Font, Sizes } from "../Constants/Constants";
+import { StatusBar } from "expo-status-bar";
+import SearchCarousel from './../Components/SearchCarousel';
 
-const Search = (props) => {
+
+
+const Home = (props) => {
   return (
-    <Container>
-      <Text style={{ color: Colors.accent }}>Search Screen</Text>
+    <Container style={{ paddingTop: 30 }}>
+      <StatusBar style="dark" />
+      <SearchCarousel navigation={props.navigation} />
+
     </Container>
   );
 };
 
-export default Search;
+export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});

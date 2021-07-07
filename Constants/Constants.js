@@ -10,12 +10,27 @@ export const Colors = {
   black: "black",
 };
 
-export const Font = {
-  header: 18,
-  title: 14,
-  subtitle: 12,
-  mini: 9,
-};
+export const Font = StyleSheet.create({
+  header: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: Colors.accent,
+    // fontFamily: "Nunito-SemiBoldItalic",
+  },
+  title: {
+    color: Colors.primary,
+    fontWeight: "bold",
+    fontSize: 14,
+  },
+  subtitle: {
+    color: Colors.secondary,
+    fontSize: 12,
+  },
+  mini: {
+    fontSize: 10,
+    color: Colors.subtitle,
+  },
+});
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;

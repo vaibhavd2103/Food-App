@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     width: width,
     height: height + 100,
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: Colors.title,
   },
   header: {
-    backgroundColor: Colors.accent,
+    backgroundColor: Colors.primary,
     flexDirection: "row",
     width: width,
     height: 60,
