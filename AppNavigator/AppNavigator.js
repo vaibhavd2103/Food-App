@@ -18,13 +18,14 @@ import {
   Ionicons,
   FontAwesome5,
 } from "react-native-vector-icons";
+import OnboardingScreen from "../Screens/OnboardingScreen";
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="BottomTab">
+      <Stack.Navigator initialRouteName="OnboardingScreen">
         <Stack.Screen
           name="Login"
           component={Login}
@@ -42,6 +43,15 @@ const AppNavigator = () => {
         <Stack.Screen
           name="BottomTab"
           component={BottomTab}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+         <Stack.Screen
+         
+          name="OnboardingScreen"
+          component={OnboardingScreen}
           options={{
             headerShown: false,
           }}
