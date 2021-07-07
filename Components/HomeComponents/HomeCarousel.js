@@ -77,6 +77,17 @@ const HomeCarousel = (props) => {
         layout="default"
         layoutCardOffset={0}
         data={data}
+        sliderWidth={width + 100}
+        itemWidth={width * 0.9}
+        onSnapToItem={(index) => setIndex(index)}
+        useScrollView={true}
+        enableSnap={true}
+        loop={true}
+        autoplay={true}
+        enableMomentum={false}
+        lockScrollWhileSnapping={true}
+        autoplayDelay={1000}
+        autoplayInterval={2000}
         renderItem={({ item, index }) => {
           return (
             <ImageBackground
@@ -119,10 +130,10 @@ const HomeCarousel = (props) => {
                     flexDirection: "row",
                     marginTop: 10,
                     alignItems: "center",
-                    justifyContent:'space-evenly'
+                    justifyContent: "space-evenly",
                   }}
                 >
-                  <View style={{ flexDirection: "row" , alignItems:'center'}}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <AntDesign name="star" size={18} color="yellow" />
                     <Text
                       style={{
@@ -138,7 +149,7 @@ const HomeCarousel = (props) => {
                       ({item.rateno})
                     </Text>
                   </View>
-                  <View style={{ flexDirection: "row" , alignItems:'center'}}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Entypo
                       name="stopwatch"
                       size={16}
@@ -149,7 +160,7 @@ const HomeCarousel = (props) => {
                       {item.duration}
                     </Text>
                   </View>
-                  <View style={{ flexDirection: "row" , alignItems:'center'}}>
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <FontAwesome
                       name="rupee"
                       size={15}
@@ -164,17 +175,6 @@ const HomeCarousel = (props) => {
             </ImageBackground>
           );
         }}
-        sliderWidth={width + 100}
-        itemWidth={width * 0.9}
-        onSnapToItem={(index) => setIndex(index)}
-        useScrollView={true}
-        enableSnap={true}
-        loop={true}
-        autoplay={true}
-        enableMomentum={false}
-        lockScrollWhileSnapping={true}
-        autoplayDelay={1000}
-        autoplayInterval={2000}
       />
     </View>
   );

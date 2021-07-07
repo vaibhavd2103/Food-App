@@ -16,8 +16,9 @@ import { FontAwesome, MaterialIcons, Entypo } from "react-native-vector-icons";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 import { Colors, Font, Sizes } from "../../Constants/Constants";
+import HomeCarousel from "./HomeCarousel";
 
-export default function ResturantFlatlist() {
+export default function ResturantFlatlist(props) {
   const restaurant= [
     {
       name: "Meals 101",
@@ -65,18 +66,31 @@ export default function ResturantFlatlist() {
   ];
   return (
     <View style={styles.container}>
-      <Text
-        style={Font.title}
-      >
-        1065 resturants around you
-      </Text>
       <FlatList
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         data={restaurant}
+        style={{width:'100%',}}
+        
+        ListHeaderComponent={({ item, index }) => {
+          return (
+            <View>
+              <HomeCarousel naviation={props.navgaition} />
+
+              
+              <Text style={{ ...Font.title, paddingTop: Sizes.padding , paddingLeft:Sizes.padding}}>
+                1065 resturants around you
+              </Text>
+
+            </View>
+          );
+        }}
         renderItem={({ item, index }) => {
           return (
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.8}>
+            <TouchableOpacity
+              style={{ width: "100%", paddingHorizontal: Sizes.padding }}
+              activeOpacity={0.8}
+            >
               <View style={styles.surface}>
                 <ImageBackground
                   imageStyle={{
@@ -98,26 +112,18 @@ export default function ResturantFlatlist() {
                       paddingVertical: 10,
                     }}
                   >
-                   
                     <View
                       style={{
-                        backgroundColor: "white",
+                        backgroundColor: Colors.accent,
                         justifyContent: "center",
                         alignItems: "center",
-                        borderRadius: 5,
+                        borderTopRightRadius: 5,
+                        borderBottomRightRadius: 5,
                         width: 50,
+                        height:20
                       }}
                     >
-                      <Text
-                        style={{
-                          fontSize: 11,
-                          fontWeight: "700",
-                          color: "#000",
-                          paddingLeft: 5,
-                        }}
-                      >
-                        30 mins
-                      </Text>
+                      <Text style={{ ...Font.subtitle, color:Colors.title }}>30 mins</Text>
                     </View>
                   </View>
                 </ImageBackground>
@@ -223,17 +229,19 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     width: "100%",
-    paddingHorizontal: 15,
-    paddingBottom: 20,
+    alignItems: "center",
+    paddingBottom: 100,
     backgroundColor: "white",
+    
   },
   surface: {
     width: "100%",
+
     backgroundColor: "white",
     alignItems: "center",
     borderRadius: 10,
     height: 230,
-    marginVertical: 20,
+    marginVertical: 10,
     elevation: 5,
     shadowColor: "#000",
     shadowOffset: { width: 1, height: 5 },
