@@ -32,7 +32,7 @@ const Home = (props) => {
         />
       </Header>
 
-      <HomeCarousel navigation={props.navigation} />
+      {/* <HomeCarousel navigation={props.navigation} /> */}
       <ResturantFlatlist naviagtion ={props.navigation}/>
       
     </Container>
