@@ -22,7 +22,7 @@ const Header = (props) => {
 const styles = StyleSheet.create({
   container: {
     width: width,
-    height: height + 100,
+    height: height + 50,
     alignItems: "center",
     backgroundColor: Colors.title,
   },

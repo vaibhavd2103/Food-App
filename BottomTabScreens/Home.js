@@ -10,31 +10,32 @@ import { Avatar } from "react-native-paper";
 import { Container, Header } from "../Components/Components";
 import { Colors, Font, Sizes } from "../Constants/Constants";
 import { StatusBar } from "expo-status-bar";
-import HomeCarousel from '../Components/HomeComponents/HomeCarousel';
-import ResturantFlatlist from '../Components/HomeComponents/ResturantFlatlist';
+import HomeCarousel from "../Components/HomeComponents/HomeCarousel";
+import ResturantFlatlist from "../Components/HomeComponents/ResturantFlatlist";
 
 const Home = (props) => {
   return (
-    <Container style={{ paddingTop: Sizes.padding * 4 }}>
-      <StatusBar style="dark" />
+    <Container>
+      <StatusBar style="light" />
       <Header
         style={{
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
           paddingHorizontal: Sizes.padding,
         }}
       >
-        <Text style={{ ...Font.header }}>Hungrezi</Text>
         <Avatar.Image
           source={{
             uri: "https://i.pinimg.com/474x/75/66/57/756657573134baeb9cdbe188195967e7--sexy-men-hot-men.jpg",
           }}
           size={35}
         />
+        <Text style={{ ...Font.header, paddingLeft: 15, color: "white" }}>
+          Hungrezy
+        </Text>
       </Header>
 
       {/* <HomeCarousel navigation={props.navigation} /> */}
-      <ResturantFlatlist naviagtion ={props.navigation}/>
-      
+      <ResturantFlatlist navigation={props.navigation} />
     </Container>
   );
 };

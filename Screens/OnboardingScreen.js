@@ -44,7 +44,7 @@ const OnboardingScreen = (props) => {
                   fontWeight: "bold",
                 }}
               >
-               HUNGREZY
+                HUNGREZY
               </Text>
 
               <Text
@@ -53,14 +53,14 @@ const OnboardingScreen = (props) => {
                   fontSize: 30,
                   fontWeight: "bold",
                   textAlign: "center",
-                  paddingTop:10
+                  paddingTop: 10,
                 }}
               >
                 The flavours of your wish.
               </Text>
             </View>
 
-              <TouchableOpacity
+            <TouchableOpacity
               style={styles.done}
               onPress={() => props.navigation.navigate("Login")}
             >
@@ -97,15 +97,15 @@ const OnboardingScreen = (props) => {
                   fontWeight: "bold",
                   textAlign: "center",
                   paddingTop: 30,
-                  padding:10
+                  padding: 10,
                 }}
-                numberOfLines = {2}
+                numberOfLines={2}
               >
-               Easy to order just take a bite out of hunger
+                Easy to order just take a bite out of hunger
               </Text>
             </View>
 
-             <TouchableOpacity
+            <TouchableOpacity
               style={styles.done}
               onPress={() => props.navigation.navigate("Login")}
             >
@@ -193,8 +193,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     borderWidth: 0,
     borderColor: Colors.secondary,
-    elevation:5
-
+    elevation: 5,
   },
   done: {
     height: 30,
@@ -206,7 +205,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 18,
-    borderWidth: 1,
+    borderWidth: 0,
     borderColor: Colors.secondary,
   },
 });
