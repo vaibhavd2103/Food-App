@@ -17,6 +17,7 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 import { Colors, Font, Sizes } from "../../Constants/Constants";
 import HomeCarousel from "./HomeCarousel";
+import HomeCategoryFlatlist from "./HomeCategoryFlatlist";
 
 export default function ResturantFlatlist(props) {
   const restaurant= [
@@ -75,10 +76,10 @@ export default function ResturantFlatlist(props) {
         ListHeaderComponent={({ item, index }) => {
           return (
             <View>
-              <HomeCarousel naviation={props.navgaition} />
-
+              <HomeCarousel navigation={props.navigation} />
+              <HomeCategoryFlatlist navigation={props.navigation}/>
               
-              <Text style={{ ...Font.title, paddingTop: Sizes.padding , paddingLeft:Sizes.padding}}>
+              <Text style={{ ...Font.title , paddingLeft:Sizes.padding}}>
                 1065 resturants around you
               </Text>
 
