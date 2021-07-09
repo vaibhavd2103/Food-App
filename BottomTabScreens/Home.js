@@ -2,9 +2,7 @@ import React from "react";
 import {
   StyleSheet,
   Text,
-  View,
-  ImageBackground,
-  Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { Avatar } from "react-native-paper";
 import { Container, Header } from "../Components/Components";
@@ -22,13 +20,14 @@ const Home = (props) => {
           justifyContent: "flex-start",
           paddingHorizontal: Sizes.padding,
         }}
-      >
+      ><TouchableOpacity onPress={() => props.navigation.openDrawer()}>
         <Avatar.Image
           source={{
             uri: "https://i.pinimg.com/474x/75/66/57/756657573134baeb9cdbe188195967e7--sexy-men-hot-men.jpg",
           }}
           size={35}
         />
+        </TouchableOpacity>
         <Text style={{ ...Font.header, paddingLeft: 15, color: "white" }}>
           Hungrezy
         </Text>

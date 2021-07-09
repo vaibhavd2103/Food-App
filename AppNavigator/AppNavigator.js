@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Login from "../Screens/Login";
 import SignUp from "../Screens/SignUp";
@@ -19,6 +18,15 @@ import {
   FontAwesome5,
 } from "react-native-vector-icons";
 import OnboardingScreen from "../Screens/OnboardingScreen";
+/* -----------------------Drawer navigation structure--------------------------*/
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import MyOrders from './../Screens/Drawer Screens/MyOrders';
+import MyProfile from './../Screens/Drawer Screens/MyProfile';
+import PaymentMethods from './../Screens/Drawer Screens/PaymentMethods';
+import ContactUs from './../Screens/Drawer Screens/ContactUs';
+import Settings from './../Screens/Drawer Screens/Settings';
+import HelpsFaqs from './../Screens/Drawer Screens/HelpsFaqs';
+import { DrawerContent } from './../Components/DrawerContent';
 
 const Stack = createStackNavigator();
 
@@ -40,16 +48,22 @@ const AppNavigator = () => {
             headerShown: false,
           }}
         />
+
+        {/* <Stack.Screen
+          name="DrawerNavigator"
+          component={DrawerNavigator}
+          options={{
+            headerShown: false,
+          }}
+        /> */}
         <Stack.Screen
-          name="BottomTab"
+          name="HomeScreen"
           component={BottomTab}
           options={{
             headerShown: false,
           }}
         />
-
-         <Stack.Screen
-         
+        <Stack.Screen
           name="OnboardingScreen"
           component={OnboardingScreen}
           options={{
@@ -95,7 +109,7 @@ function BottomTab(props) {
     >
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={DrawerNavigator}
         options={{
           tabBarIcon: () => {
             return (
@@ -196,6 +210,26 @@ function BottomTab(props) {
         }}
       />
     </Tab.Navigator>
+  );
+}
+
+/* --------------------------------Drawer Stack Stack ------------------------------------------- */
+const Drawer = createDrawerNavigator();
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Home"
+      drawerContent={(props) => <DrawerContent {...props} />}
+    >
+      {/* <Drawer.Screen name="BottomTab" component={BottomTab} /> */}
+      <Drawer.Screen name="Home1" component={Home} />
+      <Drawer.Screen name="MyOrders" component={MyOrders} />
+      <Drawer.Screen name="MyProfile" component={MyProfile} />
+      <Drawer.Screen name="PaymentMethods" component={PaymentMethods} />
+      <Drawer.Screen name="ContactUs" component={ContactUs} />
+      <Drawer.Screen name="Settings" component={Settings} />
+      <Drawer.Screen name="HelpsFaqs" component={HelpsFaqs} />
+    </Drawer.Navigator>
   );
 }
 
