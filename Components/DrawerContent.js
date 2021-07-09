@@ -5,17 +5,16 @@ import {
   Avatar,
   Title,
   Caption,
-  Paragraph,
   Drawer,
   Text,
-  TouchableRipple,
-  Switch,
+
 } from "react-native-paper";
 import {
   MaterialCommunityIcons,
   FontAwesome,
   Ionicons,
   MaterialIcons,
+  FontAwesome5,
 } from "react-native-vector-icons";
 import { Colors, Font, Sizes } from "../Constants/Constants";
 
@@ -26,122 +25,114 @@ export function DrawerContent(props) {
         {/* ---------------------------- Drawer content --------------------------------------- */}
         <View style={styles.drawerContent}>
           {/* ----------------------------- User Info ----------------------------------------- */}
-          <View style={styles.userinfo}>
-            <TouchableOpacity
-            //onPress={() =>}
-            >
-              <View style={{ flexDirection: "row" }}>
-                <Avatar.Image
-                  source={{
-                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSLkkV462n0oIUwMR99gPmRAa8iKA1Q4AP2g&usqp=CAU",
-                  }}
-                  size={60}
-                />
 
-                <View style={{ marginLeft: 10 }}>
-                  <Title
-                    style={{ color: "white", maxWidth: "90%" }}
-                    numberOfLines={1}
-                    ellipsizeMode="tail"
-                  >
-                    ABC
-                  </Title>
-                  <Caption style={{ fontSize: 15, color: "white" }}>
-                    abc@gmail.com
-                  </Caption>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            //onPress={() =>}
+            style={{ backgroundColor: "white", alignItems: "center" }}
+          >
+            <Avatar.Image
+              source={{
+                uri: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75",
+              }}
+              size={80}
+              style={{ marginLeft: 0 }}
+            />
+
+            <View style={{ alignItems: "center" }}>
+              <Text style={{ ...Font.title }}>ABC</Text>
+              <Text style={{ ...Font.subtitle }}>abc@gmail.com</Text>
+            </View>
+          </TouchableOpacity>
+
           {/* -------------------------Drawer Section Starts----------------------- */}
           <Drawer.Section style={styles.section}>
             {/* ------------------------- MY ORDERS SECTION ----------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
-                <Ionicons name="musical-notes" color={Colors.accent} size={size} />
+                <FontAwesome5
+                  name="box-open"
+                  color={Colors.accent}
+                  size={size}
+                />
               )}
-              label={() => (
-                <Text style={{...Font.title}}>My Orders</Text>
-              )}
+              label={() => <Text style={{ ...Font.title }}>My Orders</Text>}
               activeBackgroundColor="red"
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Home");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("MyOrders");
+              }}
             />
             {/* ------------------------- DELIVERY ADDRESS ----------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
-                <Ionicons name="settings" color={Colors.accent} size={25} />
+                <MaterialIcons
+                  name="account-circle"
+                  color={Colors.accent}
+                  size={26}
+                />
               )}
-              label={() => (
-                <Text style={{...Font.title}}>My Profile</Text>
-              )}
+              label={() => <Text style={{ ...Font.title }}>My Profile</Text>}
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Setting");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("MyProfile");
+              }}
             />
             {/* ------------------------- Payment methods ----------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
-                <Ionicons name="settings" color={Colors.accent} size={25} />
+                <Ionicons name="wallet" color={Colors.accent} size={25} />
               )}
               label={() => (
-                <Text style={{...Font.title}}>
-                  Payment Methods
-                </Text>
+                <Text style={{ ...Font.title }}>Payment Methods</Text>
               )}
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Setting");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("PaymentMethods");
+              }}
             />
 
             {/* ------------------------- Contact us  SECTION ----------------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
-                <Ionicons name="settings" color={Colors.accent} size={25} />
+                <MaterialIcons
+                  name="connect-without-contact"
+                  color={Colors.accent}
+                  size={25}
+                />
               )}
-              label={() => (
-                <Text style={{...Font.title}}>Contact Us</Text>
-              )}
+              label={() => <Text style={{ ...Font.title }}>Contact Us</Text>}
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Setting");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("ContactUs");
+              }}
             />
             {/* ------------------------- Settings  SECTION ----------------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="settings" color={Colors.accent} size={25} />
               )}
-              label={() => (
-                <Text style={{...Font.title}}>Settings</Text>
-              )}
+              label={() => <Text style={{ ...Font.title }}>Settings</Text>}
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Setting");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("Settings");
+              }}
             />
             {/* ------------------------- Helps & FAQs  SECTION ----------------------------- */}
             <DrawerItem
               icon={({ color, size }) => (
                 <Ionicons name="settings" color={Colors.accent} size={25} />
               )}
-              label={() => (
-                <Text style={{...Font.title}}>Helps & FAQs</Text>
-              )}
+              label={() => <Text style={{ ...Font.title }}>Help & FAQs</Text>}
               pressColor="pink"
               style={{}}
-              //   onPress={() => {
-              //     props.navigation.navigate("Setting");
-              //   }}
+              onPress={() => {
+                props.navigation.navigate("HelpsFaqs");
+              }}
             />
           </Drawer.Section>
         </View>
@@ -153,12 +144,12 @@ export function DrawerContent(props) {
 const styles = StyleSheet.create({
   drawerContent: {},
   userinfo: {
-    flexDirection: "row",
+   
 
     backgroundColor: Colors.primary,
   },
   section: {
-    paddingTop: 180,
+    paddingTop: 80,
   },
   clearcache: {
     backgroundColor: "#FF2871",
