@@ -7,13 +7,13 @@ import {
   TextInput,
   Dimensions,
 } from "react-native";
-import { Container } from "../Components/Components";
-import { Colors, Sizes, Font } from "../Constants/Constants";
+import { Container } from "../Components";
+import { Colors, Sizes, Font } from "../../Constants/Constants";
 import { FontAwesome, MaterialCommunityIcons } from "react-native-vector-icons";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
-import SearchFoodList from "./../Components/SearchFoodList";
-import SearchFoodList1 from "./../Components/SearchFoodList1";
+import SearchFoodList from "../SearchComponent/SearchFoodList";
+import SearchFoodList1 from "../SearchComponent/SearchFoodList1";
 
 export default function SearchCarousel(props) {
   const windowWidth = Dimensions.get("window").width;
@@ -24,7 +24,7 @@ export default function SearchCarousel(props) {
     {
       id: "1",
       img: {
-        uri: "https://lh3.googleusercontent.com/proxy/C6PHLd5eDUw1_9E5_Tk2rjNupub_wPkOuKFAIssunvjKlByIubq49wDUv2DfvOYI_4avzr3_MtclyV6Idqne_I4OkNwDrnkcsHCRGQCCsNhAMTZ2A4fHz_Tv5BfkvuXlfcHjXuqb1-VyNOAPz2Ih1VrQ",
+        uri: "https://lh3.googleusercontent.com/proxy/pmzWdV3IEeMarAVw4DGlDcmKvCQBlPwl_F-YdsUYxP5_disyO8ASes-avqTXaj_y5xqHkPZi9k-og1wiXrSgdbOaV3JUyS8o3za5Sq3x9vlC7gwruDnalpko_Ty2S5BBcHsF526Vfh2z3qlIhvLpRr0O",
       },
       proffer: "PRO extra Rs 100 OFF",
       offer: "20% OFF\nUpto Rs 100",
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     margin: 6,
     padding: Sizes.padding - 5,
     justifyContent: "center",
-    marginTop: Sizes.margin * 2,
+    marginTop: Sizes.margin ,
     position: "absolute",
     // bottom: 780
     alignSelf: "center",

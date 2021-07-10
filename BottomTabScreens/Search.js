@@ -9,10 +9,8 @@ import {
 import { Container } from "../Components/Components";
 import { Colors, Font, Sizes } from "../Constants/Constants";
 import { StatusBar } from "expo-status-bar";
-import SearchCarousel from "./../Components/SearchCarousel";
-import SearchFoodList from "./../Components/SearchFoodList";
-import SearchFoodList1 from "./../Components/SearchFoodList1";
 
+import SearchCarousel from "../Components/SearchComponent/SearchCarousel";
 const Home = (props) => {
   return (
     <Container>

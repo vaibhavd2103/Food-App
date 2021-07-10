@@ -9,14 +9,14 @@ import {
 } from "react-native";
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
-import { Colors, Font, Sizes } from "../Constants/Constants";
+import { Colors, Font, Sizes } from "../../Constants/Constants";
 
 export default function SearchFoodList1(props) {
-  const [songname, setSongname] = useState([
+  const [data, setData] = useState([
     {
-      name: "Trending This \n Week",
+      name: "Trending This Week",
       img: {
-        uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN6NbDJDzU59O7kCQmTj0lkqTLJHuNvbxZfQ&usqp=CAU",
+        uri: "https://www.useyournoodles.eu/wp-content/uploads/how-to-take-the-perfect-action-shot-in-food-photograpy-01-Custom-1000x423.jpg",
       },
       id: "1",
     },
@@ -35,16 +35,16 @@ export default function SearchFoodList1(props) {
       id: "3",
     },
     {
-      name: "Most Romantic \n Restaurants",
+      name: "Most Romantic Restaurants",
       img: {
-        uri: "https://im.whatshot.in/img/2018/Dec/image-1-1546261598.jpg",
+        uri: "https://www.piladekhilade.com/images/valentines2.jpg",
       },
       id: "4",
     },
     {
       name: "Best Of \n Pune",
       img: {
-        uri: "https://lh5.googleusercontent.com/-6UKnVynYrcE/UrF1Q-AA3CI/AAAAAAAALB4/YifR3edaHZ8/s640/blogger-image--658609469.jpg",
+        uri: "https://static2.tripoto.com/media/filter/tst/img/306524/TripDocument/1499944726_img_20170713_164256_224.jpg",
       },
       id: "5",
     },
@@ -64,8 +64,9 @@ export default function SearchFoodList1(props) {
       </Text>
       <FlatList
         keyExtractor={(item) => item.id}
-        data={songname}
+        data={data}
         horizontal={true}
+        showsHorizontalScrollIndicator={false}
         renderItem={({ item, index }) => {
           return (
             <Surface style={styles.surface}>
@@ -73,28 +74,32 @@ export default function SearchFoodList1(props) {
                 <ImageBackground
                   source={item.img}
                   style={{
-                    height: 150,
-                    width: 150,
+                    height:160,
+                    width:160,
                     padding: Sizes.padding,
                     flexDirection: "column-reverse",
                   }}
-                  blurRadius={2}
+                  blurRadius={0.5}
                   borderRadius={20}
                 >
+                  <View style={{backgroundColor:Colors.accent,opacity:0.7,borderRadius:10,width:80 }}>
                   <Text
                     style={{
                       ...Font.title,
                       fontWeight: "bold",
-                      color: "white",
+                      color: 'black',
 
                       //   color: "black",
                     }}
                   >
                     {item.name}
                   </Text>
+                  </View>
                 </ImageBackground>
               </TouchableOpacity>
+              
             </Surface>
+            
           );
         }}
       />
@@ -104,12 +109,12 @@ export default function SearchFoodList1(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
+    height: 220,
     width: "100%",
     backgroundColor: "transparent",
   },
   surface: {
-    width: 180,
+    width: 170,
     padding: 5,
     backgroundColor: "transparent",
     margin: 3,
