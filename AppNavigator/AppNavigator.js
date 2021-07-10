@@ -9,6 +9,7 @@ import Login from "../Screens/Login";
 import SignUp from "../Screens/SignUp";
 import Home from "../BottomTabScreens/Home";
 import Search from "../BottomTabScreens/Search";
+import EditProfile from '../Screens/Drawer Screens/EditProfile'
 import Cart from "../BottomTabScreens/Cart";
 import { Colors } from "../Constants/Constants";
 import {
@@ -70,6 +71,15 @@ const AppNavigator = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="EditProfile"
+          component={EditProfile}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

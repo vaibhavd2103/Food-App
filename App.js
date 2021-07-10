@@ -5,7 +5,9 @@ import AppNavigator from "./AppNavigator/AppNavigator";
 import { Container, Header } from "./Components/Components";
 import { Colors } from "./Constants/Constants";
 import OnboardingScreen from "./Screens/OnboardingScreen";
-import SignUp from "./Screens/SignUp";
+
+
+
 
 
 export default function App(props) {
