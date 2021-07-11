@@ -71,18 +71,18 @@ export default function ResturantFlatlist(props) {
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         data={restaurant}
-        style={{width:'100%',}}
-        
+        style={{ width: "100%" }}
         ListHeaderComponent={({ item, index }) => {
           return (
-            <View>
-              <HomeCarousel navigation={props.navigation} />
-              <HomeCategoryFlatlist navigation={props.navigation}/>
+            <Text style={{ ...Font.title, paddingLeft: Sizes.padding }}>
+              1065 resturants around you
+            </Text>
+          );
+        }}
+        ListFooterComponent={({ item, index }) => {
+          return (
+            <View style={{ height:450 , width:'100%'}}>
               
-              <Text style={{ ...Font.title , paddingLeft:Sizes.padding}}>
-                1065 resturants around you
-              </Text>
-
             </View>
           );
         }}
@@ -121,10 +121,12 @@ export default function ResturantFlatlist(props) {
                         borderTopRightRadius: 5,
                         borderBottomRightRadius: 5,
                         width: 50,
-                        height:20
+                        height: 20,
                       }}
                     >
-                      <Text style={{ ...Font.subtitle, color:Colors.title }}>30 mins</Text>
+                      <Text style={{ ...Font.subtitle, color: Colors.title }}>
+                        30 mins
+                      </Text>
                     </View>
                   </View>
                 </ImageBackground>

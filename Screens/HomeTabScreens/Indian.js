@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Container } from "../../Components/Components";
+import ResturantFlatlist from './../../Components/HomeComponents/ResturantFlatlist';
 
-const Indian = () => {
+const Indian = (props) => {
   return (
     <Container>
-      <Text>Indian food</Text>
+       <ResturantFlatlist navigation={props.navigation} /> 
     </Container>
   );
 };

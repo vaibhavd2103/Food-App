@@ -317,43 +317,45 @@ function HomeCatog(props) {
       {/* <ResturantFlatlist navigation={props.navigation} /> */}
       <HomeCarousel navigation={props.navigation} />
       {/* <HomeCategoryFlatlist navigation={props.navigation} /> */}
-      <FlatList
-        data={category}
-        keyExtractor={(item) => item.id}
-        horizontal={true}
-        style={{ backgroundColor: "red" }}
-        showsHorizontalScrollIndicator={false}
-        renderItem={({ item, index }) => {
-          return (
-            <TouchableOpacity
-              style={{
-                backgroundColor: "white",
-                alignItems: "center",
-                padding: 4,
-                height: 120,
-              }}
-              onPress={() => {
-                console.log(item.name);
-                props.navigation.navigate(item.name);
-              }}
-            >
-              <Image
-                source={item.img}
-                style={{ height: 80, width: 80, borderRadius: 80 }}
-              />
-              <Text
+      <View style={{ height: 120, backgroundColor:'green' }}>
+        <FlatList
+          data={category}
+          keyExtractor={(item) => item.id}
+          horizontal={true}
+          style={{ backgroundColor: "white", height: 10 }}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => {
+            return (
+              <TouchableOpacity
                 style={{
-                  ...Font.title,
-                  paddingTop: Sizes.padding,
-                  bottom: 5,
+                  backgroundColor: "white",
+                  alignItems: "center",
+                  padding: 4,
+                  height: 120,
+                }}
+                onPress={() => {
+                  // console.log(item.name);
+                  props.navigation.navigate(item.name);
                 }}
               >
-                {item.name}
-              </Text>
-            </TouchableOpacity>
-          );
-        }}
-      />
+                <Image
+                  source={item.img}
+                  style={{ height: 80, width: 80, borderRadius: 80 }}
+                />
+                <Text
+                  style={{
+                    ...Font.title,
+                    paddingTop: Sizes.padding,
+                    bottom: 5,
+                  }}
+                >
+                  {item.name}
+                </Text>
+              </TouchableOpacity>
+            );
+          }}
+        />
+      </View>
       <HomeCategory.Navigator>
         <HomeCategory.Screen
           name="Indian"
