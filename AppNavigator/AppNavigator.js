@@ -9,6 +9,7 @@ import Login from "../Screens/Login";
 import SignUp from "../Screens/SignUp";
 import Home from "../BottomTabScreens/Home";
 import Search from "../BottomTabScreens/Search";
+import EditProfile from '../Screens/Drawer Screens/EditProfile'
 import Cart from "../BottomTabScreens/Cart";
 import { Colors } from "../Constants/Constants";
 import {
@@ -27,14 +28,13 @@ import ContactUs from './../Screens/Drawer Screens/ContactUs';
 import Settings from './../Screens/Drawer Screens/Settings';
 import HelpsFaqs from './../Screens/Drawer Screens/HelpsFaqs';
 import { DrawerContent } from './../Components/DrawerContent';
-import Payment from "../Screens/Payment";
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="OnbordingScreen">
+      <Stack.Navigator initialRouteName="OnboardingScreen">
         <Stack.Screen
           name="Login"
           component={Login}
@@ -50,14 +50,15 @@ const AppNavigator = () => {
           }}
         />
 
-        {/* <Stack.Screen
-          name="DrawerNavigator"
-          component={DrawerNavigator}
-          options={{
-            headerShown: false,
+     {/* <Stack.Screen
+         name="DrawerNavigator"
+         component={DrawerNavigator}
+         options={{
+         headerShown: false,
           }}
-        /> */}
-        <Stack.Screen
+         /> */}
+
+        <Stack.Screen 
           name="HomeScreen"
           component={BottomTab}
           options={{
@@ -72,12 +73,30 @@ const AppNavigator = () => {
           }}
         />
         <Stack.Screen
-          name="Payment"
-          component={Payment}
+          name="EditProfile"
+          component={EditProfile}
           options={{
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+          <Stack.Screen
+          name="HelpsFaqs"
+          component={HelpsFaqs}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

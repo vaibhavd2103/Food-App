@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, ImageBackground, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import {Colors, Font, Sizes} from '../../Constants/Constants'
 
 import { Entypo,Ionicons } from '@expo/vector-icons';
 // import {Colors, Sizes,Font} from '
