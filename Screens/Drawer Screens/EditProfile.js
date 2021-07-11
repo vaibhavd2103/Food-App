@@ -46,13 +46,17 @@ const App = (props) => {
             imageStyle={{ borderRadius: 300}}
           ></ImageBackground>
         <View style={{ position: "absolute", top: 175, left: 145 }} onPress = {() =>{}}>
-        <FontAwesome
+        
+        <TouchableOpacity  activeOpacity ={0.7} onPress =  {()=> {}}>
+<FontAwesome
           name="camera"
           size={35}
           color= 'grey'
           
-          onPress = {()=>{}}
+         
         />
+        </TouchableOpacity>
+        
         </View>
       </View>
         

@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
           justifyContent:'center',
           alignItems:'center',
           margin:5,
-          backgroundColor:Colors.secondary
+          backgroundColor:Colors.primary
       },
       queryinp:{
           width:'70%',
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
           paddingLeft:10,
           fontSize:Font.title.fontSize,
           marginTop:10,
-          backgroundColor:Colors.secondary
+          backgroundColor:Colors.primary
       },
 
       submit:{

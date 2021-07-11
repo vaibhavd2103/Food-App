@@ -9,7 +9,7 @@ const MyProfile = (props) => {
   return (
     <ScrollView style = {{width:'100%'}}>
     <View style = {styles.container}>
- <View style={{flexDirection:'row', backgroundColor:'green', width:'100%', fontSize:20, fontWeight:'bold', height:50, justifyContent:'center', alignItems:'center'}}>
+ {/* <View style={{flexDirection:'row', backgroundColor:Colors.primary, width:'100%', fontSize:20, fontWeight:'bold', height:50, justifyContent:'center', alignItems:'center'}}>
         <View style={{ width: "10%" }}>
           
             <Ionicons name="chevron-back-sharp" size={24} color="white" onPress = {()=> props.navigation.goBack()}/>
@@ -21,25 +21,31 @@ const MyProfile = (props) => {
           </Text>
         </View>
         <View style={{ width: "10%" }}></View>
-      </View>
+      </View> */}
      <ImageBackground 
         source = {{
           uri:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKxesCtVsGXREMUyqjo6AzEwL3trcc4f2iGA&usqp=CAU'
         }}
         style = {styles.image}
      >
-
-       <View style = {{justifyContent:'flex-end', height:240, paddingLeft:40}}>
+  <Ionicons name="chevron-back-sharp" size={24} color="white" onPress = {()=> props.navigation.goBack()} style = {{paddingLeft:10}} />
+       <View style = {{justifyContent:'flex-end', height:210, paddingLeft:40}}>
  <Text style = {styles.imagetext}>
       Eva Max
     </Text>
        </View>
 
         <View style = {{width:'100%', alignItems:'flex-end', paddingRight:18, position:'absolute', height:250, flexDirection:'column-reverse', marginTop:25}}>
- <View style = {styles.icon}>
-<Entypo name="edit" size={24} color="black" style = {{alignSelf:'center',  bottom:10}} onPress = {() => props.navigation.navigate('EditProfile')} />
+ 
+   <TouchableOpacity 
+   onPress= {() => props.navigation.navigate('EditProfile')} 
+   style = {styles.icon}
+   activeOpacity = {0.7} >
+<Entypo name="edit" size={24} color="white" style = {{alignSelf:'center',  bottom:10}} />
+   </TouchableOpacity>
+
        </View>
-        </View>
+   
         
      </ImageBackground>
 
@@ -63,7 +69,7 @@ const MyProfile = (props) => {
 
 <TouchableOpacity style = {styles.button}>
   <View >
-    <Text style = {{fontSize:20, fontWeight:'bold'}}>
+    <Text style = {{fontSize:20, fontWeight:'bold', color:'white'}}>
       Add
     </Text>
   </View>
@@ -97,7 +103,7 @@ const styles = StyleSheet.create({
     height:50,
     width:50,
     borderRadius:30,
-    backgroundColor:'red',
+    backgroundColor:Colors.accent,
     justifyContent:'flex-end',
     
   },
@@ -122,7 +128,7 @@ const styles = StyleSheet.create({
   button:{
     width:80,
     height:40,
-    backgroundColor:'red',
+    backgroundColor:Colors.accent,
     justifyContent:'center',
     alignItems:'center',
     alignSelf:'center',
