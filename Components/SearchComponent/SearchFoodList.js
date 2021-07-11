@@ -60,7 +60,7 @@ export default function PopularRadioList(props) {
 
           color: "black",
           paddingLeft: Sizes.padding,
-          paddingTop: Sizes.padding,
+          // paddingTop: Sizes.padding,
         }}
       >
         Food
@@ -114,8 +114,8 @@ const styles = StyleSheet.create({
   container: {
     height: 160,
     width: "100%",
-
     backgroundColor: "transparent",
+   
   },
   surface: {
     width: 80,

@@ -10,6 +10,8 @@ import {
 import { Image } from "react-native";
 import { Surface } from "react-native-paper";
 import { Colors, Font, Sizes } from "../../Constants/Constants";
+import SearchFoodList from "../SearchComponent/SearchFoodList";
+import SearchCarousel from '../SearchComponent/SearchCarousel';
 
 export default function SearchFoodList1(props) {
   const [data, setData] = useState([
@@ -51,33 +53,46 @@ export default function SearchFoodList1(props) {
   ]);
   return (
     <View style={styles.container}>
-      <Text
-        style={{
-          ...Font.header,
-
-          color: "black",
-          paddingLeft: Sizes.padding,
-          paddingTop: Sizes.padding,
-        }}
-      >
-        Curated Collection
-      </Text>
+   
       <FlatList
         keyExtractor={(item) => item.id}
         data={data}
-        horizontal={true}
+        horizontal={false}
         showsHorizontalScrollIndicator={false}
+        style={{width:'100%',}}
+         
+        ListHeaderComponent={({ item, index }) => {
+          return (
+            <View>
+              <SearchCarousel navigation={props.navigation} />
+              <SearchFoodList navigation={props.navigation} />
+              <Text
+                 style={{
+                      ...Font.header,
+                      color: "black",
+                      paddingLeft: Sizes.padding,
+                      paddingTop: Sizes.padding,
+                  }}
+              >
+                    Curated Collection
+              </Text>
+            </View>
+          );
+        }}
         renderItem={({ item, index }) => {
           return (
             <Surface style={styles.surface}>
-              <TouchableOpacity onPress={() => {}}>
+              
+              <TouchableOpacity onPress={() => {}} >
                 <ImageBackground
                   source={item.img}
                   style={{
-                    height:160,
-                    width:160,
+                    height:230,
+                    width:'100%',
                     padding: Sizes.padding,
                     flexDirection: "column-reverse",
+                 
+                  
                   }}
                   blurRadius={0.5}
                   borderRadius={20}
@@ -97,29 +112,34 @@ export default function SearchFoodList1(props) {
                   </View>
                 </ImageBackground>
               </TouchableOpacity>
-              
             </Surface>
             
           );
+          
         }}
       />
+      
     </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 220,
+    height: "100%",
     width: "100%",
-    backgroundColor: "transparent",
+    paddingTop:40
+   
+    
   },
   surface: {
-    width: 170,
+    width: "100%",
     padding: 5,
-    backgroundColor: "transparent",
-    margin: 3,
-    // justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 20,
+ 
+    justifyContent: "center",
+    marginVertical:5,
+  
+    
+    
   },
 });

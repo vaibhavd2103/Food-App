@@ -11,11 +11,12 @@ import { Colors, Font, Sizes } from "../Constants/Constants";
 import { StatusBar } from "expo-status-bar";
 
 import SearchCarousel from "../Components/SearchComponent/SearchCarousel";
+import SearchFoodList1 from './../Components/SearchComponent/SearchFoodList1';
 const Home = (props) => {
   return (
     <Container>
       <StatusBar style="light" />
-      <SearchCarousel navigation={props.navigation} />
+      <SearchFoodList1 navigation={props.navigation} />
     </Container>
   );
 };

@@ -9,7 +9,6 @@ import Login from "../Screens/Login";
 import SignUp from "../Screens/SignUp";
 import Home from "../BottomTabScreens/Home";
 import Search from "../BottomTabScreens/Search";
-import EditProfile from '../Screens/Drawer Screens/EditProfile'
 import Cart from "../BottomTabScreens/Cart";
 import { Colors } from "../Constants/Constants";
 import {
@@ -28,13 +27,14 @@ import ContactUs from './../Screens/Drawer Screens/ContactUs';
 import Settings from './../Screens/Drawer Screens/Settings';
 import HelpsFaqs from './../Screens/Drawer Screens/HelpsFaqs';
 import { DrawerContent } from './../Components/DrawerContent';
+import Payment from "../Screens/Payment";
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="OnboardingScreen">
+      <Stack.Navigator initialRouteName="OnbordingScreen">
         <Stack.Screen
           name="Login"
           component={Login}
@@ -72,14 +72,12 @@ const AppNavigator = () => {
           }}
         />
         <Stack.Screen
-          name="EditProfile"
-          component={EditProfile}
+          name="Payment"
+          component={Payment}
           options={{
             headerShown: false,
           }}
         />
-
-       
       </Stack.Navigator>
     </NavigationContainer>
   );

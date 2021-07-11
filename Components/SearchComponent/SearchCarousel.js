@@ -11,9 +11,8 @@ import { Container } from "../Components";
 import { Colors, Sizes, Font } from "../../Constants/Constants";
 import { FontAwesome, MaterialCommunityIcons } from "react-native-vector-icons";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
-import SearchFoodList from "../SearchComponent/SearchFoodList";
-import SearchFoodList1 from "../SearchComponent/SearchFoodList1";
+import { ScrollView } from "react-native-gesture-handler";
+
 
 export default function SearchCarousel(props) {
   const windowWidth = Dimensions.get("window").width;
@@ -64,8 +63,8 @@ export default function SearchCarousel(props) {
     },
   ]);
   return (
-    <Container style={styles.container}>
-      <ScrollView style={{ width: Sizes.width, height: "100%" }}>
+    
+      <>
         <Carousel
           layout="default"
           layoutCardOffset={0}
@@ -134,13 +133,9 @@ export default function SearchCarousel(props) {
             />
           </View>
         </View>
-        <View style={{ paddingBottom: 50 }}>
-          <SearchFoodList navigation={props.navigation} />
-          <SearchFoodList1 navigation={props.navigation} />
-        </View>
-        <View style={{ height: 100, width: Sizes.width }}></View>
-      </ScrollView>
-    </Container>
+        
+   </>
+ 
   );
 }
 
