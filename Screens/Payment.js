@@ -37,227 +37,183 @@ const Payment = () => {
     },
   ])
   return (
-    <ScrollView style={{width:'100%'}}>
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <ScrollView style={{ width: "100%", backgroundColor: "white" }}>
+      <View style={styles.container}>
+        {/* <View style={{...styles.header, height:50, backgroundColor:'white'}}>
         <View style={{width:'10%'}}>
         <MaterialIcons name="arrow-back" size={24} color="black" />
         </View>
-        <View style={{width:'80%'}}>
+       <View style={{width:'80%'}}>
         <Text style={{ ...Font.header }}> Payment Options</Text>
-        </View>
+        </View> *
         <View style={{width:'10%'}}>
             
         </View>
-      </View>
-      <Carousel
-        layout="default"
-        layoutCardOffset={0}
-        ref={isCarousel}
-        data={data}
-        renderItem={({ item, index }) => {
-          return (
-         <View>
-            <View style={styles.img}>
-              <Image source={{uri:item.img}} style={{height:210,width:'100%'} }/>
-            </View>
-            
+      </View> */}
+        <Carousel
+          layout="default"
+          layoutCardOffset={0}
+          ref={isCarousel}
+          data={data}
+          renderItem={({ item, index }) => {
+            return (
+              // <View style={{ backgroundColor: "orange" }}>
+              <View style={styles.img}>
+                <Image
+                  source={{ uri: item.img }}
+                  style={{ height: 180, width: "100%", borderRadius: 20 }}
+                />
               </View>
-              
-          );
-        }}
-        sliderWidth={windowWidth}
-        itemWidth={windowWidth * 0.8}
-        onSnapToItem={(index) => setIndex(index)}
-        useScrollView={true}
-        enableSnap={true} //perfect center me ata hai
-        loop={true}
-        // autoplay={true}
-        enableMomentum={false}
-        lockScrollWhileSnapping={true} //prevent auto scroll while we scroll
-        // autoplayDelay={500}
-        // autoplayInterval={1500}
-      />
-      <Pagination
-        dotsLength={data.length}
-        dotColor={Colors.accent}
-        activeDotIndex={index}
-        carouselRef={isCarousel}
-        dotStyle={{
-          width: 10,
-          height: 10,
-          borderRadius: 5,
-          marginHorizontal: 0,
-          backgroundColor: Colors.accent,
-        }}
-        inactiveDotOpacity={0.4}
-        inactiveDotColor="black"
-        inactiveDotScale={1}
-        tappableDots={true}
-        containerStyle={{paddingTop:20}}
-      /> 
-      <View style={{paddingRight:100,width:'100%'}}>
-                <Text style={{fontSize:20,color:'black',fontWeight:'bold'}}>
-                  Add a new Payment options
-                </Text>
-        </View>
-       
-      <View  style={{
-                    flexDirection: "row", 
-                    alignItems: "center",
-                    height: 50,
-                    width: "95%",
-                    paddingHorizontal: 10,
-                    marginTop: 10,
-                    backgroundColor: "white",
-                    
-                    
-                  }}>
-                    <View style={{width:'10%'}}>
-                     <EvilIcons name="sc-google-plus" size={24} color="black" />
-                     </View>
-                     <View style={{width:'75%'}}>
-                    
-        <Text style={{ ...Font.title,}}>Google Pay</Text>
-        </View>
-        <View style={styles.option}>
-        <RadioButton
-          value="first"
-          status={checked === "first" ? "checked" : "unchecked"}
-          onPress={() => setChecked("first")}
-          uncheckedColor="grey"
-          color={Colors.accent}
+              // </View>
+            );
+          }}
+          sliderWidth={windowWidth}
+          itemWidth={windowWidth * 0.8}
+          onSnapToItem={(index) => setIndex(index)}
+          useScrollView={true}
+          enableSnap={true} //perfect center me ata hai
+          loop={true}
+          // autoplay={true}
+          enableMomentum={false}
+          lockScrollWhileSnapping={true} //prevent auto scroll while we scroll
+          // autoplayDelay={500}
+          // autoplayInterval={1500}
         />
-      </View>
-      </View>
+        <Pagination
+          dotsLength={data.length}
+          dotColor={Colors.accent}
+          activeDotIndex={index}
+          carouselRef={isCarousel}
+          dotStyle={{
+            width: 10,
+            height: 10,
+            borderRadius: 5,
+            marginHorizontal: 0,
+            backgroundColor: Colors.accent,
+          }}
+          inactiveDotOpacity={0.4}
+          inactiveDotColor="black"
+          inactiveDotScale={1}
+          tappableDots={true}
+          containerStyle={{ paddingTop: 20 }}
+        />
+        <View style={{ width: "100%" }}>
+          <Text style={{ ...Font.title, paddingLeft: Sizes.padding }}>
+            Add a new Payment options
+          </Text>
+        </View>
 
-      <View  style={{
-                    flexDirection: "row", 
-                    alignItems: "center",
-                    height: 50,
-                    width: "95%",
-                    paddingHorizontal: 10,
-                    marginTop: 10,
-                    backgroundColor: "white",
-                    
-                    
-                  }}>
-                    <View style={{width:'10%'}}>
-                     <EvilIcons name="sc-google-plus" size={24} color="black" />
-                     </View>
-                     <View style={{width:'75%'}}>
-                    
-        <Text style={{ ...Font.title,}}>Visa</Text>
+        <View style={styles.optionContainer}>
+          <View style={{ width: "10%" }}>
+            <EvilIcons name="sc-google-plus" size={24} color="black" />
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={{ ...Font.title }}>Google Pay</Text>
+          </View>
+          <View style={styles.option}>
+            <RadioButton
+              value="first"
+              status={checked === "first" ? "checked" : "unchecked"}
+              onPress={() => setChecked("first")}
+              uncheckedColor="grey"
+              color={Colors.accent}
+            />
+          </View>
         </View>
-        <View style={styles.option}>
-        <RadioButton
-          value="second"
-          status={checked === "second" ? "checked" : "unchecked"}
-          onPress={() => setChecked("second")}
-          uncheckedColor="grey"
-          color={Colors.accent}
-        />
-      </View>
-      </View>
-      
-      <View  style={{
-                    flexDirection: "row", 
-                    alignItems: "center",
-                    height: 50,
-                    width: "95%",
-                    paddingHorizontal: 10,
-                    marginTop: 10,
-                    backgroundColor: "white",
-                    
-                    
-                  }}>
-                    <View style={{width:'10%'}}>
-                     <EvilIcons name="sc-google-plus" size={24} color="black" />
-                     </View>
-                     <View style={{width:'75%'}}>
-                    
-        <Text style={{ ...Font.title,}}>Visa</Text>
+
+        <View style={styles.optionContainer}>
+          <View style={{ width: "10%" }}>
+            <EvilIcons name="sc-google-plus" size={24} color="black" />
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={{ ...Font.title }}>Visa</Text>
+          </View>
+          <View style={styles.option}>
+            <RadioButton
+              value="second"
+              status={checked === "second" ? "checked" : "unchecked"}
+              onPress={() => setChecked("second")}
+              uncheckedColor="grey"
+              color={Colors.accent}
+            />
+          </View>
         </View>
-        <View style={styles.option}>
-        <RadioButton
-          value="third"
-          status={checked === "third" ? "checked" : "unchecked"}
-          onPress={() => setChecked("third")}
-          uncheckedColor="grey"
-          color={Colors.accent}
-        />
-      </View>
-      </View>
-      
-      <View  style={{
-                    flexDirection: "row", 
-                    alignItems: "center",
-                    height: 50,
-                    width: "95%",
-                    paddingHorizontal: 10,
-                    marginTop: 10,
-                    backgroundColor: "white",
-                    
-                    
-                  }}>
-                    <View style={{width:'10%'}}>
-                     <EvilIcons name="sc-google-plus" size={24} color="black" />
-                     </View>
-                     <View style={{width:'75%'}}>
-                    
-        <Text style={{ ...Font.title,}}>Visa</Text>
+
+        <View style={styles.optionContainer}>
+          <View style={{ width: "10%" }}>
+            <EvilIcons name="sc-google-plus" size={24} color="black" />
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={{ ...Font.title }}>Visa</Text>
+          </View>
+          <View style={styles.option}>
+            <RadioButton
+              value="third"
+              status={checked === "third" ? "checked" : "unchecked"}
+              onPress={() => setChecked("third")}
+              uncheckedColor="grey"
+              color={Colors.accent}
+            />
+          </View>
         </View>
-        <View style={styles.option}>
-        <RadioButton
-          value="fourth"
-          status={checked === "fourth" ? "checked" : "unchecked"}
-          onPress={() => setChecked("fourth")}
-          uncheckedColor="grey"
-          color={Colors.accent}
-        />
-      </View>
-      </View>
-      
-      <View  style={{
-                    flexDirection: "row", 
-                    alignItems: "center",
-                    height: 50,
-                    width: "95%",
-                    paddingHorizontal: 10,
-                    marginTop: 10,
-                    backgroundColor: "white",
-                    
-                    
-                  }}>
-                    <View style={{width:'10%'}}>
-                     <EvilIcons name="sc-google-plus" size={24} color="black" />
-                     </View>
-                     <View style={{width:'75%'}}>
-                    
-        <Text style={{ ...Font.title,}}>Visa</Text>
+
+        <View style={styles.optionContainer}>
+          <View style={{ width: "10%" }}>
+            <EvilIcons name="sc-google-plus" size={24} color="black" />
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={{ ...Font.title }}>Visa</Text>
+          </View>
+          <View style={styles.option}>
+            <RadioButton
+              value="fourth"
+              status={checked === "fourth" ? "checked" : "unchecked"}
+              onPress={() => setChecked("fourth")}
+              uncheckedColor="grey"
+              color={Colors.accent}
+            />
+          </View>
         </View>
-        <View style={styles.option}>
-        <RadioButton
-          value="fifth"
-          status={checked === "fifth" ? "checked" : "unchecked"}
-          onPress={() => setChecked("fifth")}
-          uncheckedColor="grey"
-          color={Colors.accent}
-        />
-      </View>
-      </View>
-      <TouchableOpacity
-       activeOpacity={0.7} 
-      style={{width:100,backgroundColor:Colors.accent,alignItems:'center',height:40,justifyContent:'center',borderRadius:20,marginTop:20}}>
-      <View>
-        <Text style={{...Font.title,color:'white',fontSize:16}}>
+
+        <View style={styles.optionContainer}>
+          <View style={{ width: "10%" }}>
+            <EvilIcons name="sc-google-plus" size={24} color="black" />
+          </View>
+          <View style={{ width: "75%" }}>
+            <Text style={{ ...Font.title }}>Visa</Text>
+          </View>
+          <View style={styles.option}>
+            <RadioButton
+              value="fifth"
+              status={checked === "fifth" ? "checked" : "unchecked"}
+              onPress={() => setChecked("fifth")}
+              uncheckedColor="grey"
+              color={Colors.accent}
+            />
+          </View>
+        </View>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={{
+            width: 100,
+            backgroundColor: Colors.accent,
+            alignItems: "center",
+            height: 40,
+            justifyContent: "center",
+            borderRadius: 20,
+            marginTop: 20,
+            elevation:10
+          }}
+        >
+         
+            <Text style={{ ...Font.title, color: "white", fontSize: 16 }}>
               Next
-        </Text>
+            </Text>
+        
+        </TouchableOpacity>
       </View>
-      </TouchableOpacity>
-      </View>
-      </ScrollView>
-  )
+    </ScrollView>
+  );
 }
 
 export default Payment
@@ -265,8 +221,9 @@ export default Payment
 const styles = StyleSheet.create({
   container: {
         flex: 1,
-    paddingTop: 50,
-    alignItems:'center'
+    paddingTop: 20,
+    alignItems:'center',
+    backgroundColor:'white'
     
   },
   header: {
@@ -276,8 +233,8 @@ const styles = StyleSheet.create({
     
     },
     img: {
-        paddingTop: 20,
-        height: 260,
+        paddingTop: 0,
+        height: 200,
         justifyContent: 'center',
         alignItems:'center'
         
@@ -290,4 +247,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
+  optionContainer:{
+    flexDirection: "row", 
+    alignItems: "center",
+    height: 50,
+     width: "95%",
+     paddingHorizontal: 10,
+     marginTop: 10,
+    backgroundColor: "white",
+    elevation:10
+                    
+                    
+                  
+  }
 })

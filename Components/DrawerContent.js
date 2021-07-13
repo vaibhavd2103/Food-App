@@ -28,17 +28,35 @@ export function DrawerContent(props) {
 
           <TouchableOpacity
             //onPress={() =>}
-            style={{ backgroundColor: "white", alignItems: "center" }}
+            style={{
+              backgroundColor: Colors.primary,
+              alignItems: "center",
+              height: 110,
+              borderBottomLeftRadius: 40,
+              borderBottomRightRadius: 40,
+            }}
           >
-            <Avatar.Image
-              source={{
-                uri: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75",
+            <View
+              style={{
+                height: 90,
+                width: 90,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: 'white',
+                borderRadius: 85,
+                elevation: 10,
+                top: 40,
               }}
-              size={80}
-              style={{ marginLeft: 0 }}
-            />
-
-            <View style={{ alignItems: "center" }}>
+            >
+              <Avatar.Image
+                source={{
+                  uri: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75",
+                }}
+                size={80}
+                style={{ marginLeft: 0 }}
+              />
+            </View>
+            <View style={{ alignItems: "center", top: 40 }}>
               <Text style={{ ...Font.title }}>ABC</Text>
               <Text style={{ ...Font.subtitle }}>abc@gmail.com</Text>
             </View>
@@ -142,7 +160,7 @@ export function DrawerContent(props) {
 }
 
 const styles = StyleSheet.create({
-  drawerContent: {},
+  drawerContent: {backgroundColor:'white', position:'relative', bottom:10},
   userinfo: {
    
 

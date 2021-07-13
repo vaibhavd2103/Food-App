@@ -11,7 +11,7 @@ import { Surface } from "react-native-paper";
 
 import { Font, Sizes } from "../../Constants/Constants";
 
-import SearchFoodList1 from "./SearchFoodList1";
+
 
 export default function PopularRadioList(props) {
   const [data, setData] = useState([
@@ -56,11 +56,9 @@ export default function PopularRadioList(props) {
     <View style={styles.container}>
       <Text
         style={{
-          ...Font.header,
-
-          color: "black",
-          paddingLeft: Sizes.padding,
-          // paddingTop: Sizes.padding,
+          ...Font.title,
+          paddingLeft: Sizes.padding + 5,
+          paddingTop:Sizes.padding
         }}
       >
         Food
@@ -79,28 +77,23 @@ export default function PopularRadioList(props) {
               >
                 <View
                   style={{
-                    width: 68,
-                    height: 68,
+                    width: 62,
+                    height: 62,
                     elevation: 20,
                     borderRadius: 200,
                     elevation: 20,
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: "black"
+                    backgroundColor: "black",
                   }}
                 >
                   <Image
-                    style={{ width: 65, height: 65, borderRadius: 200 }}
+                    style={{ width: 60, height: 60, borderRadius: 200 }}
                     source={item.img}
                   />
                 </View>
-                
-                <Text
-                  style={{ ...Font.title}}
-                >
-                  {item.name}
-                </Text>
-                
+
+                <Text style={{ ...Font.subtitle }}>{item.name}</Text>
               </TouchableOpacity>
             </Surface>
           );
@@ -112,18 +105,19 @@ export default function PopularRadioList(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 160,
+    height: 120,
     width: "100%",
-    backgroundColor: "transparent",
+    backgroundColor: "white",
    
   },
   surface: {
     width: 80,
-    padding: 5,
-    backgroundColor: "transparent",
+    padding: 0,
+    backgroundColor: "white",
     margin: 3,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
+    height:80
   },
 });

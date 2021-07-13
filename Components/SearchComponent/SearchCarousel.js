@@ -76,7 +76,6 @@ export default function SearchCarousel(props) {
                 style={{
                   paddingTop: 0,
                   alignItems: "center",
-                  //   justifyContent: "center",
                   backgroundColor: "transparent",
                 }}
               >
@@ -84,7 +83,7 @@ export default function SearchCarousel(props) {
                   source={item.img}
                   style={{
                     width: Sizes.width,
-                    height: 300,
+                    height: 200,
                     // alignItems: "center",
                     justifyContent: "flex-end",
                   }}
@@ -97,12 +96,12 @@ export default function SearchCarousel(props) {
                       size={18}
                       color="black"
                     />
-                    <Text style={{ ...Font.title }}>{item.offer}</Text>
+                    <Text style={{ ...Font.subtitle ,color:'black', paddingLeft:5}}>{item.offer}</Text>
                   </View>
 
                   {<Text>{item.proffer}</Text> ? (
                     <View style={styles.proffer}>
-                      <Text style={{ ...Font.title }}>{item.proffer}</Text>
+                      <Text style={{ ...Font.subtitle , color:'black'}}>{item.proffer}</Text>
                     </View>
                   ) : (
                     <View style={{ backgroundColor: "transparent" }}></View>

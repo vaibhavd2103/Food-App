@@ -14,16 +14,16 @@ import SearchFoodList from "../SearchComponent/SearchFoodList";
 import SearchCarousel from '../SearchComponent/SearchCarousel';
 
 export default function SearchFoodList1(props) {
-  const [data, setData] = useState([
+  const data = [
     {
-      name: "Trending This Week",
+      name: "Trending this week",
       img: {
         uri: "https://www.useyournoodles.eu/wp-content/uploads/how-to-take-the-perfect-action-shot-in-food-photograpy-01-Custom-1000x423.jpg",
       },
       id: "1",
     },
     {
-      name: "For The \n Family",
+      name: "The Family",
       img: {
         uri: "https://75580cde83d35dc00a05-20f670a5827f41ce9e85089eb012f48c.ssl.cf1.rackcdn.com/Velvet_Restaurant_Dinner.jpg",
       },
@@ -37,83 +37,84 @@ export default function SearchFoodList1(props) {
       id: "3",
     },
     {
-      name: "Most Romantic Restaurants",
+      name: "Romantic ",
       img: {
         uri: "https://www.piladekhilade.com/images/valentines2.jpg",
       },
       id: "4",
     },
     {
-      name: "Best Of \n Pune",
+      name: "Best Of Pune",
       img: {
         uri: "https://static2.tripoto.com/media/filter/tst/img/306524/TripDocument/1499944726_img_20170713_164256_224.jpg",
       },
       id: "5",
     },
-  ]);
+  ];
   return (
     <View style={styles.container}>
    
       <FlatList
         keyExtractor={(item) => item.id}
-        data={data}
-        horizontal={false}
-        showsHorizontalScrollIndicator={false}
-        style={{width:'100%',}}
-         
+        data={data} 
+        numColumns={2}
+        ListFooterComponent={({item, index})=>{
+          return(
+            <View style={{height:150}}></View>
+          )
+        }}
         ListHeaderComponent={({ item, index }) => {
           return (
             <View>
               <SearchCarousel navigation={props.navigation} />
               <SearchFoodList navigation={props.navigation} />
               <Text
-                 style={{
-                      ...Font.header,
-                      color: "black",
-                      paddingLeft: Sizes.padding,
-                      paddingTop: Sizes.padding,
-                  }}
+                style={{
+                  ...Font.title,
+                  paddingLeft: Sizes.padding + 5,
+                }}
               >
-                    Curated Collection
+                Curated Collection
               </Text>
             </View>
           );
         }}
         renderItem={({ item, index }) => {
           return (
-            <Surface style={styles.surface}>
-              
-              <TouchableOpacity onPress={() => {}} >
+            <View style={{ backgroundColor: "white", alignItems: "center" , width:'50%', padding:10}}>
+              <TouchableOpacity onPress={() => {}} style={styles.surface}>
                 <ImageBackground
                   source={item.img}
                   style={{
-                    height:230,
-                    width:'100%',
-                    padding: Sizes.padding,
-                    flexDirection: "column-reverse",
-                 
-                  
+                    height: "100%",
+                    width: "100%",
+                    // padding: Sizes.padding,
+                    alignSelf:'center'
                   }}
                   blurRadius={0.5}
-                  borderRadius={20}
+                  borderTopRightRadius={20}
+                  borderBottomLeftRadius={20}
                 >
-                  <View style={{backgroundColor:Colors.accent,opacity:0.7,borderRadius:10,width:80 }}>
-                  <Text
+                  <View
                     style={{
-                      ...Font.title,
-                      fontWeight: "bold",
-                      color: 'black',
-
-                      //   color: "black",
+                      backgroundColor: Colors.secondary,
+                      borderRadius: 10,
+                      width: 80,
+                      padding:3,top:10,
+                      left:5
                     }}
                   >
-                    {item.name}
-                  </Text>
+                    <Text
+                      style={{
+                        ...Font.subtitle,color:'white'
+                      }}
+                    >
+                      {item.name}
+                    </Text>
                   </View>
                 </ImageBackground>
               </TouchableOpacity>
-            </Surface>
-            
+            </View>
           );
           
         }}
@@ -126,20 +127,18 @@ export default function SearchFoodList1(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
-    width: "100%",
-    paddingTop:40
-   
-    
+    flex: 1,
+    backgroundColor:'white'
   },
   surface: {
+   
+    
+    backgroundColor: "white",
+    borderRadius: 15,
     width: "100%",
-    padding: 5,
- 
-    justifyContent: "center",
-    marginVertical:5,
-  
-    
-    
+    height: 110,
+    borderRadius: 10,
+    alignSelf:'center',
+    alignItems:'center'
   },
 });

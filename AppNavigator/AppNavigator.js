@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  ScrollView
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -47,6 +48,7 @@ import Pizza from "../Screens/HomeTabScreens/Pizza";
 import Burger from "../Screens/HomeTabScreens/Burger";
 import { Header } from "../Components/Components";
 import HomeCarousel from "../Components/HomeComponents/HomeCarousel";
+import Payment from './../Screens/Payment';
 
 const Stack = createStackNavigator();
 
@@ -294,116 +296,141 @@ function HomeCatog(props) {
   ];
   return (
     <>
-      <Header
-        style={{
-          justifyContent: "flex-start",
-          paddingHorizontal: Sizes.padding,
-        }}
-      >
-        <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
-          <Avatar.Image
-            source={{
-              uri: "https://i.pinimg.com/474x/75/66/57/756657573134baeb9cdbe188195967e7--sexy-men-hot-men.jpg",
-            }}
-            size={35}
-          />
-        </TouchableOpacity>
-        <Text style={{ ...Font.header, paddingLeft: 15, color: "white" }}>
-          Hungrezy
-        </Text>
-      </Header>
+     
+        <Header
+          style={{
+            justifyContent: "flex-start",
+            paddingHorizontal: Sizes.padding,
+          }}
+        >
+          <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
+            <Avatar.Image
+              source={{
+                uri: "https://i.pinimg.com/474x/75/66/57/756657573134baeb9cdbe188195967e7--sexy-men-hot-men.jpg",
+              }}
+              size={35}
+            />
+          </TouchableOpacity>
+          <Text style={{ ...Font.header, paddingLeft: 15, color: "white" }}>
+            Hungrezy
+          </Text>
+        </Header>
 
-      {/* <HomeCarousel navigation={props.navigation} /> */}
-      {/* <ResturantFlatlist navigation={props.navigation} /> */}
-      <HomeCarousel navigation={props.navigation} />
-      {/* <HomeCategoryFlatlist navigation={props.navigation} /> */}
-      <View style={{ height: 120, backgroundColor:'green' }}>
-        <FlatList
-          data={category}
-          keyExtractor={(item) => item.id}
-          horizontal={true}
-          style={{ backgroundColor: "white", height: 10 }}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => {
-            return (
-              <TouchableOpacity
-                style={{
-                  backgroundColor: "white",
-                  alignItems: "center",
-                  padding: 4,
-                  height: 120,
-                }}
-                onPress={() => {
-                  // console.log(item.name);
-                  props.navigation.navigate(item.name);
-                }}
-              >
-                <Image
-                  source={item.img}
-                  style={{ height: 80, width: 80, borderRadius: 80 }}
-                />
-                <Text
+        {/* <HomeCarousel navigation={props.navigation} /> */}
+        {/* <ResturantFlatlist navigation={props.navigation} /> */}
+        <HomeCarousel navigation={props.navigation} />
+        {/* <HomeCategoryFlatlist navigation={props.navigation} /> */}
+        <View style={{ height: 100, backgroundColor: "green" }}>
+          <FlatList
+            data={category}
+            keyExtractor={(item) => item.id}
+            horizontal={true}
+            style={{ backgroundColor: "white", height: 10 }}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => {
+              return (
+                <TouchableOpacity
                   style={{
-                    ...Font.title,
-                    paddingTop: Sizes.padding,
-                    bottom: 5,
+                    backgroundColor: "white",
+                    alignItems: "center",
+                    padding: 4,
+                    height: 120,
+                  }}
+                  onPress={() => {
+                    // console.log(item.name);
+                    props.navigation.navigate(item.name);
                   }}
                 >
-                  {item.name}
-                </Text>
-              </TouchableOpacity>
-            );
-          }}
-        />
-      </View>
-      <HomeCategory.Navigator>
-        <HomeCategory.Screen
-          name="Indian"
-          component={Indian}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <HomeCategory.Screen
-          name="Veg"
-          component={Veg}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <HomeCategory.Screen
-          name="NonVeg"
-          component={NonVeg}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <HomeCategory.Screen
-          name="Burger"
-          component={Burger}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <HomeCategory.Screen
-          name="Pizza"
-          component={Pizza}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <HomeCategory.Screen
-          name="BreakFast"
-          component={BreakFast}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </HomeCategory.Navigator>
+                  <Image
+                    source={item.img}
+                    style={{ height: 60, width: 60, borderRadius: 80 }}
+                  />
+                  <Text
+                    style={{
+                      ...Font.title,
+                      paddingTop: Sizes.padding,
+                      bottom: 5,
+                    }}
+                  >
+                    {item.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+        <HomeCategory.Navigator>
+          <HomeCategory.Screen
+            name="Indian"
+            component={Indian}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <HomeCategory.Screen
+            name="Veg"
+            component={Veg}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <HomeCategory.Screen
+            name="NonVeg"
+            component={NonVeg}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <HomeCategory.Screen
+            name="Burger"
+            component={Burger}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <HomeCategory.Screen
+            name="Pizza"
+            component={Pizza}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <HomeCategory.Screen
+            name="BreakFast"
+            component={BreakFast}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </HomeCategory.Navigator>
+   
     </>
   );
 }
 
+
+
+/* --------------------------------Drawer Stack Stack ------------------------------------------- */
+const Drawer = createDrawerNavigator();
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Home1"
+      drawerContent={(props) => <DrawerContent {...props} />}
+    >
+      {/* <Drawer.Screen name="BottomTab" component={BottomTab} /> */}
+      <Drawer.Screen name="Home1" component={BottomTabStack} />
+      <Drawer.Screen name="MyOrders" component={MyOrders} />
+      <Drawer.Screen name="MyProfile" component={MyProfile} />
+      <Drawer.Screen name="PaymentMethods" component={Payment} />
+      <Drawer.Screen name="ContactUs" component={ContactUs} />
+      <Drawer.Screen name="Settings" component={Settings} />
+      <Drawer.Screen name="HelpsFaqs" component={HelpsFaqs} />
+    </Drawer.Navigator>
+  );
+}
+
+export default AppNavigator;
 // const Tab = createBottomTabNavigator();
 
 // function BottomTab(props) {
@@ -541,25 +568,3 @@ function HomeCatog(props) {
 //     </Tab.Navigator>
 //   );
 // }
-
-/* --------------------------------Drawer Stack Stack ------------------------------------------- */
-const Drawer = createDrawerNavigator();
-function DrawerNavigator() {
-  return (
-    <Drawer.Navigator
-      initialRouteName="Home1"
-      drawerContent={(props) => <DrawerContent {...props} />}
-    >
-      {/* <Drawer.Screen name="BottomTab" component={BottomTab} /> */}
-      <Drawer.Screen name="Home1" component={BottomTabStack} />
-      <Drawer.Screen name="MyOrders" component={MyOrders} />
-      <Drawer.Screen name="MyProfile" component={MyProfile} />
-      <Drawer.Screen name="PaymentMethods" component={PaymentMethods} />
-      <Drawer.Screen name="ContactUs" component={ContactUs} />
-      <Drawer.Screen name="Settings" component={Settings} />
-      <Drawer.Screen name="HelpsFaqs" component={HelpsFaqs} />
-    </Drawer.Navigator>
-  );
-}
-
-export default AppNavigator;
